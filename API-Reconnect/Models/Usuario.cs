@@ -16,7 +16,7 @@ namespace API_Reconnect.Models
         public string Profissao { get; set; }
         public string Cpf { get; set; }
         public string Endereco { get; set; }
-        public DateTime datNascimento { get; set;}
+        public DateTime DatNascimento { get; set;}
 
         [JsonIgnore]
         public List<Servico> Servicos { get; set; }
