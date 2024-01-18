@@ -93,7 +93,7 @@ namespace API_Reconnect.Migrations
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Nome = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Email = table.Column<int>(type: "int", nullable: false),
+                    Email = table.Column<string>(type: "longtext", nullable: false),
                     Mensagem = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     ServicoId = table.Column<int>(type: "int", nullable: false)

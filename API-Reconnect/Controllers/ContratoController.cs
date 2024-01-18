@@ -25,11 +25,11 @@ namespace API_Reconnect.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Contrato>>> GetContratos()
         {
-            var contratos  = await _context.Contratos
-                .Include(contrato =>contrato.Usuario)
+            var contrato  = await _context.Contratos
+                .Include(contrato => contrato.Usuario)
                 .Include(contrato => contrato.Servico)
                 .ToListAsync();
-            return contratos;
+            return contrato;
         }
 
         // GET: api/Contrato/5

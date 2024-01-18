@@ -7,7 +7,7 @@ namespace API_Reconnect.Models
         [Key]
         public int Id { get; set; }
         public string Nome { get; set; }
-        public int Email { get; set; }
+        public string Email { get; set; }
         public string Mensagem { get; set; }
 
         public int ServicoId { get; set; }

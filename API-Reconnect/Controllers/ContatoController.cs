@@ -25,14 +25,20 @@ namespace API_Reconnect.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Contato>>> GetContatos()
         {
-            return await _context.Contatos.ToListAsync();
+            var contato = await _context.Contatos
+                .Include(contato => contato.Servico)
+                .ToListAsync();
+
+            return contato;
         }
 
         // GET: api/Contato/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Contato>> GetContato(int id)
         {
-            var contato = await _context.Contatos.FindAsync(id);
+            var contato = await _context.Contatos
+                .Include(contato => contato.Servico)
+                .FirstOrDefaultAsync(contato => contato.Id == id);
 
             if (contato == null)
             {
