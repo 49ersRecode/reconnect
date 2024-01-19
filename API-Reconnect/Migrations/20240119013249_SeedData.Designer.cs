@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API_Reconnect.Migrations
 {
     [DbContext(typeof(ApiDbContext))]
-    [Migration("20240118041419_primeiro")]
-    partial class primeiro
+    [Migration("20240119013249_SeedData")]
+    partial class SeedData
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -27,8 +27,8 @@ namespace API_Reconnect.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("Email")
-                        .HasColumnType("int");
+                    b.Property<string>("Email")
+                        .HasColumnType("longtext");
 
                     b.Property<string>("Mensagem")
                         .HasColumnType("longtext");
@@ -44,6 +44,32 @@ namespace API_Reconnect.Migrations
                     b.HasIndex("ServicoId");
 
                     b.ToTable("Contatos");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Email = "lukasich@com",
+                            Mensagem = "Gostaria de saber quanto custa ir para Fortaleza de carro!",
+                            Nome = "Lucas Chaves",
+                            ServicoId = 3
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Email = "juca@com",
+                            Mensagem = "Quanto custo reformar meu quarto?",
+                            Nome = "Juca Paz",
+                            ServicoId = 2
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Email = "anto@com",
+                            Mensagem = "Você ensina à domicílio?",
+                            Nome = "Antônio Freitas",
+                            ServicoId = 1
+                        });
                 });
 
             modelBuilder.Entity("API_Reconnect.Models.Contrato", b =>
@@ -74,6 +100,35 @@ namespace API_Reconnect.Migrations
                     b.HasIndex("UsuarioId");
 
                     b.ToTable("Contratos");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Concluido = false,
+                            DataHora = new DateTime(2024, 2, 18, 15, 0, 0, 0, DateTimeKind.Unspecified),
+                            Endereco = "Rua do chinelo, 20",
+                            ServicoId = 2,
+                            UsuarioId = 2
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Concluido = false,
+                            DataHora = new DateTime(2024, 2, 21, 11, 0, 0, 0, DateTimeKind.Unspecified),
+                            Endereco = "Rua do Ensino Fundamental, 50",
+                            ServicoId = 1,
+                            UsuarioId = 3
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Concluido = false,
+                            DataHora = new DateTime(2024, 3, 15, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            Endereco = "Avenida Perdida, 120",
+                            ServicoId = 3,
+                            UsuarioId = 2
+                        });
                 });
 
             modelBuilder.Entity("API_Reconnect.Models.FaleConosco", b =>
@@ -97,6 +152,32 @@ namespace API_Reconnect.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("FaleConosco");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Email = "moraes@com",
+                            Mensagem = "Gostei muito do sistema, mas gostaria de trocar minha senha.",
+                            Nome = "Moraes",
+                            Status = false
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Email = "antoinho@com",
+                            Mensagem = "Como faço para me cadastrar sem ter um telefone?",
+                            Nome = "Antony Stark",
+                            Status = false
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Email = "nando@com",
+                            Mensagem = "Gostaria de saber como cadasro meu serviço.",
+                            Nome = "Fernanda Kipper",
+                            Status = false
+                        });
                 });
 
             modelBuilder.Entity("API_Reconnect.Models.Servico", b =>
@@ -119,6 +200,29 @@ namespace API_Reconnect.Migrations
                     b.HasIndex("UsuarioId");
 
                     b.ToTable("Servicos");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Descricao = "Serviços de professores",
+                            Nome = "Ensino",
+                            UsuarioId = 3
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Descricao = "Reformas de todos os tipos",
+                            Nome = "Construção",
+                            UsuarioId = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Descricao = "Motorista de aplicativo",
+                            Nome = "Motorista",
+                            UsuarioId = 3
+                        });
                 });
 
             modelBuilder.Entity("API_Reconnect.Models.Usuario", b =>
@@ -129,6 +233,9 @@ namespace API_Reconnect.Migrations
 
                     b.Property<string>("Cpf")
                         .HasColumnType("longtext");
+
+                    b.Property<DateTime>("DatNascimento")
+                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -150,12 +257,47 @@ namespace API_Reconnect.Migrations
                     b.Property<string>("Telefone")
                         .HasColumnType("longtext");
 
-                    b.Property<DateTime>("datNascimento")
-                        .HasColumnType("datetime(6)");
-
                     b.HasKey("Id");
 
                     b.ToTable("Usuarios");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Cpf = "123.456.789-98",
+                            DatNascimento = new DateTime(1985, 3, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "irineu@com",
+                            Endereco = "Rua do gatos, n. 0",
+                            Nome = "Irineu Júnior",
+                            Profissao = "Pedreiro",
+                            Senha = "123",
+                            Telefone = "(12)98734-5678"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Cpf = "123.874.965-98",
+                            DatNascimento = new DateTime(1965, 8, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "carol@com",
+                            Endereco = "Rua do viajantes, n. 10",
+                            Nome = "Carol Danvers",
+                            Profissao = "Motorista",
+                            Senha = "123",
+                            Telefone = "(97)98754-9548"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Cpf = "987.874.965-98",
+                            DatNascimento = new DateTime(1942, 7, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "steve@com",
+                            Endereco = "Rua do caps, n. 450",
+                            Nome = "Steve Rogers",
+                            Profissao = "Professor",
+                            Senha = "123",
+                            Telefone = "(97)97541-6532"
+                        });
                 });
 
             modelBuilder.Entity("API_Reconnect.Models.Contato", b =>

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace API_Reconnect.Migrations
 {
-    public partial class primeiro : Migration
+    public partial class SeedData : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -53,7 +53,7 @@ namespace API_Reconnect.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Endereco = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    datNascimento = table.Column<DateTime>(type: "datetime(6)", nullable: false)
+                    DatNascimento = table.Column<DateTime>(type: "datetime(6)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -93,7 +93,8 @@ namespace API_Reconnect.Migrations
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Nome = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Email = table.Column<string>(type: "longtext", nullable: false),
+                    Email = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
                     Mensagem = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     ServicoId = table.Column<int>(type: "int", nullable: false)
@@ -140,6 +141,61 @@ namespace API_Reconnect.Migrations
                         onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.InsertData(
+                table: "FaleConosco",
+                columns: new[] { "Id", "Email", "Mensagem", "Nome", "Status" },
+                values: new object[,]
+                {
+                    { 1, "moraes@com", "Gostei muito do sistema, mas gostaria de trocar minha senha.", "Moraes", false },
+                    { 2, "antoinho@com", "Como faço para me cadastrar sem ter um telefone?", "Antony Stark", false },
+                    { 3, "nando@com", "Gostaria de saber como cadasro meu serviço.", "Fernanda Kipper", false }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Usuarios",
+                columns: new[] { "Id", "Cpf", "DatNascimento", "Email", "Endereco", "Nome", "Profissao", "Senha", "Telefone" },
+                values: new object[,]
+                {
+                    { 1, "123.456.789-98", new DateTime(1985, 3, 13, 0, 0, 0, 0, DateTimeKind.Unspecified), "irineu@com", "Rua do gatos, n. 0", "Irineu Júnior", "Pedreiro", "123", "(12)98734-5678" },
+                    { 2, "123.874.965-98", new DateTime(1965, 8, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), "carol@com", "Rua do viajantes, n. 10", "Carol Danvers", "Motorista", "123", "(97)98754-9548" },
+                    { 3, "987.874.965-98", new DateTime(1942, 7, 25, 0, 0, 0, 0, DateTimeKind.Unspecified), "steve@com", "Rua do caps, n. 450", "Steve Rogers", "Professor", "123", "(97)97541-6532" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Servicos",
+                columns: new[] { "Id", "Descricao", "Nome", "UsuarioId" },
+                values: new object[] { 1, "Serviços de professores", "Ensino", 3 });
+
+            migrationBuilder.InsertData(
+                table: "Servicos",
+                columns: new[] { "Id", "Descricao", "Nome", "UsuarioId" },
+                values: new object[] { 2, "Reformas de todos os tipos", "Construção", 1 });
+
+            migrationBuilder.InsertData(
+                table: "Servicos",
+                columns: new[] { "Id", "Descricao", "Nome", "UsuarioId" },
+                values: new object[] { 3, "Motorista de aplicativo", "Motorista", 3 });
+
+            migrationBuilder.InsertData(
+                table: "Contatos",
+                columns: new[] { "Id", "Email", "Mensagem", "Nome", "ServicoId" },
+                values: new object[,]
+                {
+                    { 1, "lukasich@com", "Gostaria de saber quanto custa ir para Fortaleza de carro!", "Lucas Chaves", 3 },
+                    { 2, "juca@com", "Quanto custo reformar meu quarto?", "Juca Paz", 2 },
+                    { 3, "anto@com", "Você ensina à domicílio?", "Antônio Freitas", 1 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Contratos",
+                columns: new[] { "Id", "Concluido", "DataHora", "Endereco", "ServicoId", "UsuarioId" },
+                values: new object[,]
+                {
+                    { 1, false, new DateTime(2024, 2, 18, 15, 0, 0, 0, DateTimeKind.Unspecified), "Rua do chinelo, 20", 2, 2 },
+                    { 2, false, new DateTime(2024, 2, 21, 11, 0, 0, 0, DateTimeKind.Unspecified), "Rua do Ensino Fundamental, 50", 1, 3 },
+                    { 3, false, new DateTime(2024, 3, 15, 10, 0, 0, 0, DateTimeKind.Unspecified), "Avenida Perdida, 120", 3, 2 }
+                });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Contatos_ServicoId",
