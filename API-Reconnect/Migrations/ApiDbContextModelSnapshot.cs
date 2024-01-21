@@ -205,21 +205,56 @@ namespace API_Reconnect.Migrations
                             Id = 1,
                             Descricao = "Serviços de professores",
                             Nome = "Ensino",
-                            UsuarioId = 3
+                            UsuarioId = 2
                         },
                         new
                         {
                             Id = 2,
-                            Descricao = "Reformas de todos os tipos",
-                            Nome = "Construção",
+                            Descricao = "Motorista de aplicativo",
+                            Nome = "Motorista",
                             UsuarioId = 1
                         },
                         new
                         {
                             Id = 3,
-                            Descricao = "Motorista de aplicativo",
-                            Nome = "Motorista",
+                            Descricao = "Reformas de todos os tipos",
+                            Nome = "Reforma",
                             UsuarioId = 3
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Descricao = "Serviços de limpeza",
+                            Nome = "Serviços Domésticos",
+                            UsuarioId = 4
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Descricao = "Reparo de automóveis",
+                            Nome = "Mecânico",
+                            UsuarioId = 5
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Descricao = "Serviços de encanador",
+                            Nome = "Encanador",
+                            UsuarioId = 6
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Descricao = "Serviços de Pesonal Trainer",
+                            Nome = "Personal",
+                            UsuarioId = 7
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Descricao = "Serviços de cozinha",
+                            Nome = "Cozinha",
+                            UsuarioId = 8
                         });
                 });
 
@@ -228,6 +263,9 @@ namespace API_Reconnect.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    b.Property<string>("Bio")
+                        .HasColumnType("longtext");
 
                     b.Property<string>("Cpf")
                         .HasColumnType("longtext");
@@ -240,6 +278,9 @@ namespace API_Reconnect.Migrations
                         .HasColumnType("longtext");
 
                     b.Property<string>("Endereco")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Foto")
                         .HasColumnType("longtext");
 
                     b.Property<string>("Nome")
@@ -263,38 +304,114 @@ namespace API_Reconnect.Migrations
                         new
                         {
                             Id = 1,
+                            Bio = "Faço transporte particular para eventos, viagens e empresas.",
                             Cpf = "123.456.789-98",
                             DatNascimento = new DateTime(1985, 3, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "irineu@com",
-                            Endereco = "Rua do gatos, n. 0",
+                            Endereco = "Rua do Gatos, n. 0",
+                            Foto = "https://media.licdn.com/dms/image/C4D03AQH5__8lovq3Qw/profile-displayphoto-shrink_800_800/0/1521630576802?e=2147483647&v=beta&t=Sl_AZe5Cy1MvCT5yEKQcqpyDOHDPpvl8WiSDEj-YE0k",
                             Nome = "Irineu Júnior",
-                            Profissao = "Pedreiro",
+                            Profissao = "Motorista",
                             Senha = "123",
                             Telefone = "(12)98734-5678"
                         },
                         new
                         {
                             Id = 2,
-                            Cpf = "123.874.965-98",
+                            Bio = "Ensino Matemática e Física para crianças, jovens e adultos.",
+                            Cpf = "123.874.965-35",
                             DatNascimento = new DateTime(1965, 8, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "carol@com",
-                            Endereco = "Rua do viajantes, n. 10",
+                            Endereco = "Av. dos Viajantes, n. 1010",
+                            Foto = "https://i.pinimg.com/236x/a5/80/da/a580daf4f797e10a4e5443915bedba86.jpg",
                             Nome = "Carol Danvers",
-                            Profissao = "Motorista",
+                            Profissao = "Professor(a)",
                             Senha = "123",
                             Telefone = "(97)98754-9548"
                         },
                         new
                         {
                             Id = 3,
-                            Cpf = "987.874.965-98",
+                            Bio = "Faço sua casa virar um paraíso!",
+                            Cpf = "987.874.965-12",
                             DatNascimento = new DateTime(1942, 7, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "steve@com",
-                            Endereco = "Rua do caps, n. 450",
+                            Endereco = "Av. Capitão América, n. 450",
+                            Foto = "https://i.pinimg.com/originals/36/01/b3/3601b349f9f4b95528d7a85104c5ff15.jpg",
                             Nome = "Steve Rogers",
-                            Profissao = "Professor",
+                            Profissao = "Pedreiro",
                             Senha = "123",
                             Telefone = "(97)97541-6532"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Bio = "Limpo de tudo. Agenda livre para fins de semana!",
+                            Cpf = "123.654.964-75",
+                            DatNascimento = new DateTime(1983, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "marinete@com",
+                            Endereco = "Rua Clean, n. 200",
+                            Foto = "https://www.estrelando.com.br/uploads/2016/09/08/7-1473346686.gallery.jpg",
+                            Nome = "Marinete D.",
+                            Profissao = "Diarista",
+                            Senha = "123",
+                            Telefone = "(11)985791-6965"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Bio = "Sou profissional de motos, mais de 20 anos de experiência.",
+                            Cpf = "987.345.965-98",
+                            DatNascimento = new DateTime(1980, 2, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "jax@com",
+                            Endereco = "Av. Charming, n. 120",
+                            Foto = "https://i.pinimg.com/736x/64/da/ab/64daab7bb0a107904f21831a0a7a9483.jpg",
+                            Nome = "Jax Teller",
+                            Profissao = "Mecânico",
+                            Senha = "123",
+                            Telefone = "(14)98751-6428"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Bio = "Melhor encanador do bairro! Aceito todo tipo de trabalho.",
+                            Cpf = "987.874.978-01",
+                            DatNascimento = new DateTime(1990, 6, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "mario@com",
+                            Endereco = "Rua dos Canos, n. 450",
+                            Foto = "https://image-cdn.essentiallysports.com/wp-content/uploads/Mario-The-last-of-us-180x180.jpg",
+                            Nome = "Mário B.",
+                            Profissao = "Encanador",
+                            Senha = "123",
+                            Telefone = "(44)97515-6532"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Bio = "Personal trainer para emagrecimento e definição.",
+                            Cpf = "875.874.568-02",
+                            DatNascimento = new DateTime(1981, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "natasha@com",
+                            Endereco = "Av. Rua dos Exercícios, n. 85",
+                            Foto = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkNfq2S8h30n1dyTHFT4b1WfK41cB7lzFdyEuSPRz2W-vA94FEH9urevekbXg5EFbXQQ8&usqp=CAU",
+                            Nome = "Natasha  R.",
+                            Profissao = "Personal Trainer",
+                            Senha = "123",
+                            Telefone = "(97)97854-6578"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Bio = "Cozinho com amor! Aceito encomendas, ganha brinde.",
+                            Cpf = "986.742.123-03",
+                            DatNascimento = new DateTime(2010, 10, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "patsferrer@com",
+                            Endereco = "Av. Panqueca, 7845",
+                            Foto = "https://patsferrer.github.io/49ers/src/images/perfis/perfil09.png",
+                            Nome = "Patricia F.",
+                            Profissao = "Marmiteira",
+                            Senha = "123",
+                            Telefone = "(85)89547-5478"
                         });
                 });
 
