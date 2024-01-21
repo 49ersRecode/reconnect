@@ -57,7 +57,7 @@ namespace API_Reconnect.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Foto = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    DatNascimento = table.Column<DateTime>(type: "datetime(6)", nullable: false)
+                    DataNascimento = table.Column<DateTime>(type: "datetime(6)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -151,14 +151,14 @@ namespace API_Reconnect.Migrations
                 columns: new[] { "Id", "Email", "Mensagem", "Nome", "Status" },
                 values: new object[,]
                 {
-                    { 1, "moraes@com", "Gostei muito do sistema, mas gostaria de trocar minha senha.", "Moraes", false },
+                    { 1, "loiane@com", "Gostei muito do sistema, gostaria de trocar minha senha.", "Loiane", false },
                     { 2, "antoinho@com", "Como faço para me cadastrar sem ter um telefone?", "Antony Stark", false },
-                    { 3, "nando@com", "Gostaria de saber como cadasro meu serviço.", "Fernanda Kipper", false }
+                    { 3, "nanda@com", "Gostaria de saber como cadastro meu serviço.", "Fernanda Kipper", false }
                 });
 
             migrationBuilder.InsertData(
                 table: "Usuarios",
-                columns: new[] { "Id", "Bio", "Cpf", "DatNascimento", "Email", "Endereco", "Foto", "Nome", "Profissao", "Senha", "Telefone" },
+                columns: new[] { "Id", "Bio", "Cpf", "DataNascimento", "Email", "Endereco", "Foto", "Nome", "Profissao", "Senha", "Telefone" },
                 values: new object[,]
                 {
                     { 1, "Faço transporte particular para eventos, viagens e empresas.", "123.456.789-98", new DateTime(1985, 3, 13, 0, 0, 0, 0, DateTimeKind.Unspecified), "irineu@com", "Rua do Gatos, n. 0", "https://media.licdn.com/dms/image/C4D03AQH5__8lovq3Qw/profile-displayphoto-shrink_800_800/0/1521630576802?e=2147483647&v=beta&t=Sl_AZe5Cy1MvCT5yEKQcqpyDOHDPpvl8WiSDEj-YE0k", "Irineu Júnior", "Motorista", "123", "(12)98734-5678" },
@@ -201,9 +201,9 @@ namespace API_Reconnect.Migrations
                 columns: new[] { "Id", "Concluido", "DataHora", "Endereco", "ServicoId", "UsuarioId" },
                 values: new object[,]
                 {
-                    { 1, false, new DateTime(2024, 2, 18, 15, 0, 0, 0, DateTimeKind.Unspecified), "Rua do chinelo, 20", 2, 2 },
-                    { 2, false, new DateTime(2024, 2, 21, 11, 0, 0, 0, DateTimeKind.Unspecified), "Rua do Ensino Fundamental, 50", 1, 3 },
-                    { 3, false, new DateTime(2024, 3, 15, 10, 0, 0, 0, DateTimeKind.Unspecified), "Avenida Perdida, 120", 3, 2 }
+                    { 1, false, new DateTime(2024, 2, 18, 15, 0, 0, 0, DateTimeKind.Unspecified), "Rua do chinelo, 20", 1, 2 },
+                    { 2, false, new DateTime(2024, 2, 21, 11, 0, 0, 0, DateTimeKind.Unspecified), "Rua do Ensino Fundamental, 50", 2, 1 },
+                    { 3, false, new DateTime(2024, 3, 15, 10, 0, 0, 0, DateTimeKind.Unspecified), "Avenida Perdida, 120", 3, 3 }
                 });
 
             migrationBuilder.CreateIndex(

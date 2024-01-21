@@ -106,7 +106,7 @@ namespace API_Reconnect.Migrations
                             Concluido = false,
                             DataHora = new DateTime(2024, 2, 18, 15, 0, 0, 0, DateTimeKind.Unspecified),
                             Endereco = "Rua do chinelo, 20",
-                            ServicoId = 2,
+                            ServicoId = 1,
                             UsuarioId = 2
                         },
                         new
@@ -115,8 +115,8 @@ namespace API_Reconnect.Migrations
                             Concluido = false,
                             DataHora = new DateTime(2024, 2, 21, 11, 0, 0, 0, DateTimeKind.Unspecified),
                             Endereco = "Rua do Ensino Fundamental, 50",
-                            ServicoId = 1,
-                            UsuarioId = 3
+                            ServicoId = 2,
+                            UsuarioId = 1
                         },
                         new
                         {
@@ -125,7 +125,7 @@ namespace API_Reconnect.Migrations
                             DataHora = new DateTime(2024, 3, 15, 10, 0, 0, 0, DateTimeKind.Unspecified),
                             Endereco = "Avenida Perdida, 120",
                             ServicoId = 3,
-                            UsuarioId = 2
+                            UsuarioId = 3
                         });
                 });
 
@@ -155,9 +155,9 @@ namespace API_Reconnect.Migrations
                         new
                         {
                             Id = 1,
-                            Email = "moraes@com",
-                            Mensagem = "Gostei muito do sistema, mas gostaria de trocar minha senha.",
-                            Nome = "Moraes",
+                            Email = "loiane@com",
+                            Mensagem = "Gostei muito do sistema, gostaria de trocar minha senha.",
+                            Nome = "Loiane",
                             Status = false
                         },
                         new
@@ -171,8 +171,8 @@ namespace API_Reconnect.Migrations
                         new
                         {
                             Id = 3,
-                            Email = "nando@com",
-                            Mensagem = "Gostaria de saber como cadasro meu serviço.",
+                            Email = "nanda@com",
+                            Mensagem = "Gostaria de saber como cadastro meu serviço.",
                             Nome = "Fernanda Kipper",
                             Status = false
                         });
@@ -270,7 +270,7 @@ namespace API_Reconnect.Migrations
                     b.Property<string>("Cpf")
                         .HasColumnType("longtext");
 
-                    b.Property<DateTime>("DatNascimento")
+                    b.Property<DateTime>("DataNascimento")
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("Email")
@@ -306,7 +306,7 @@ namespace API_Reconnect.Migrations
                             Id = 1,
                             Bio = "Faço transporte particular para eventos, viagens e empresas.",
                             Cpf = "123.456.789-98",
-                            DatNascimento = new DateTime(1985, 3, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataNascimento = new DateTime(1985, 3, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "irineu@com",
                             Endereco = "Rua do Gatos, n. 0",
                             Foto = "https://media.licdn.com/dms/image/C4D03AQH5__8lovq3Qw/profile-displayphoto-shrink_800_800/0/1521630576802?e=2147483647&v=beta&t=Sl_AZe5Cy1MvCT5yEKQcqpyDOHDPpvl8WiSDEj-YE0k",
@@ -320,7 +320,7 @@ namespace API_Reconnect.Migrations
                             Id = 2,
                             Bio = "Ensino Matemática e Física para crianças, jovens e adultos.",
                             Cpf = "123.874.965-35",
-                            DatNascimento = new DateTime(1965, 8, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataNascimento = new DateTime(1965, 8, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "carol@com",
                             Endereco = "Av. dos Viajantes, n. 1010",
                             Foto = "https://i.pinimg.com/236x/a5/80/da/a580daf4f797e10a4e5443915bedba86.jpg",
@@ -334,7 +334,7 @@ namespace API_Reconnect.Migrations
                             Id = 3,
                             Bio = "Faço sua casa virar um paraíso!",
                             Cpf = "987.874.965-12",
-                            DatNascimento = new DateTime(1942, 7, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataNascimento = new DateTime(1942, 7, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "steve@com",
                             Endereco = "Av. Capitão América, n. 450",
                             Foto = "https://i.pinimg.com/originals/36/01/b3/3601b349f9f4b95528d7a85104c5ff15.jpg",
@@ -348,7 +348,7 @@ namespace API_Reconnect.Migrations
                             Id = 4,
                             Bio = "Limpo de tudo. Agenda livre para fins de semana!",
                             Cpf = "123.654.964-75",
-                            DatNascimento = new DateTime(1983, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataNascimento = new DateTime(1983, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "marinete@com",
                             Endereco = "Rua Clean, n. 200",
                             Foto = "https://www.estrelando.com.br/uploads/2016/09/08/7-1473346686.gallery.jpg",
@@ -362,7 +362,7 @@ namespace API_Reconnect.Migrations
                             Id = 5,
                             Bio = "Sou profissional de motos, mais de 20 anos de experiência.",
                             Cpf = "987.345.965-98",
-                            DatNascimento = new DateTime(1980, 2, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataNascimento = new DateTime(1980, 2, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "jax@com",
                             Endereco = "Av. Charming, n. 120",
                             Foto = "https://i.pinimg.com/736x/64/da/ab/64daab7bb0a107904f21831a0a7a9483.jpg",
@@ -376,7 +376,7 @@ namespace API_Reconnect.Migrations
                             Id = 6,
                             Bio = "Melhor encanador do bairro! Aceito todo tipo de trabalho.",
                             Cpf = "987.874.978-01",
-                            DatNascimento = new DateTime(1990, 6, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataNascimento = new DateTime(1990, 6, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "mario@com",
                             Endereco = "Rua dos Canos, n. 450",
                             Foto = "https://image-cdn.essentiallysports.com/wp-content/uploads/Mario-The-last-of-us-180x180.jpg",
@@ -390,7 +390,7 @@ namespace API_Reconnect.Migrations
                             Id = 7,
                             Bio = "Personal trainer para emagrecimento e definição.",
                             Cpf = "875.874.568-02",
-                            DatNascimento = new DateTime(1981, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataNascimento = new DateTime(1981, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "natasha@com",
                             Endereco = "Av. Rua dos Exercícios, n. 85",
                             Foto = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkNfq2S8h30n1dyTHFT4b1WfK41cB7lzFdyEuSPRz2W-vA94FEH9urevekbXg5EFbXQQ8&usqp=CAU",
@@ -404,7 +404,7 @@ namespace API_Reconnect.Migrations
                             Id = 8,
                             Bio = "Cozinho com amor! Aceito encomendas, ganha brinde.",
                             Cpf = "986.742.123-03",
-                            DatNascimento = new DateTime(2010, 10, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataNascimento = new DateTime(2010, 10, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "patsferrer@com",
                             Endereco = "Av. Panqueca, 7845",
                             Foto = "https://patsferrer.github.io/49ers/src/images/perfis/perfil09.png",
