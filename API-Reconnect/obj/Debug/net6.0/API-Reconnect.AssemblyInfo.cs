@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("API-Reconnect")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aba22469f493712eea9d0739a80b21196ef1bbd4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("API-Reconnect")]
 [assembly: System.Reflection.AssemblyTitleAttribute("API-Reconnect")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
