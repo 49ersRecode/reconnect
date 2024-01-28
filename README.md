@@ -1,6 +1,6 @@
 # API Reconnect
-Esta È uma API construÌda em C# utilizando o framework .NET 6.0, que fornece serviÁos para serem consumidos por uma aplicaÁ„o Frontend desenvolvida em [React com Next.js]( https://github.com/49ersRecode/ReconnectReactNext). 
-A API utiliza o Entity Framework Core para interagir com o banco de dados e È capaz de se conectar a diferentes provedores de banco de dados.
+Esta √© uma API constru√≠da em C# utilizando o framework .NET 6.0, que fornece servi√ßos para serem consumidos por uma aplica√ß√£o Frontend desenvolvida em [React com Next.js]( https://github.com/49ersRecode/ReconnectReactNext). 
+A API utiliza o Entity Framework Core para interagir com o banco de dados e √© capaz de se conectar a diferentes provedores de banco de dados.
 
 ## Tecnologias Utilizadas
 - C# (.NET 6.0)
@@ -9,20 +9,20 @@ A API utiliza o Entity Framework Core para interagir com o banco de dados e È ca
 ## Requisitos
 - .NET 6.0 SDK
 
-## DependÍncias
+## Depend√™ncias
 
-- Microsoft.EntityFrameworkCore: Vers„o 6.0.26 - Biblioteca principal para o Entity Framework, permitindo operaÁıes de banco de dados.
-- Microsoft.EntityFrameworkCore.Design: Vers„o 6.0.26 - Suporte em tempo de design para comandos do Entity Framework Core.
-- Microsoft.EntityFrameworkCore.Proxies: Vers„o 6.0.0 - Habilita proxies de carregamento preguiÁoso para o Entity Framework Core.
-- Microsoft.EntityFrameworkCore.Sqlite: Vers„o 6.0.26 - Provedor de banco de dados SQLite para o Entity Framework Core.
-- Microsoft.EntityFrameworkCore.SqlServer: Vers„o 6.0.26 - Provedor de banco de dados SQL Server para o Entity Framework Core.
-- Microsoft.EntityFrameworkCore.Tools: Vers„o 6.0.26 - Ferramentas adicionais para o Entity Framework Core.
-- Microsoft.VisualStudio.Web.CodeGeneration.Design: Vers„o 6.0.16 - Suporte em tempo de design para geraÁ„o de cÛdigo ASP.NET Core.
-- Pomelo.EntityFrameworkCore.MySql: Vers„o 6.0.2 - Provedor de banco de dados MySQL para o Entity Framework Core.
-- Swashbuckle.AspNetCore: Vers„o 6.5.0 - Biblioteca para geraÁ„o autom·tica de documentaÁ„o OpenAPI para a API.
+- Microsoft.EntityFrameworkCore: Vers√£o 6.0.26 - Biblioteca principal para o Entity Framework, permitindo opera√ß√µes de banco de dados.
+- Microsoft.EntityFrameworkCore.Design: Vers√£o 6.0.26 - Suporte em tempo de design para comandos do Entity Framework Core.
+- Microsoft.EntityFrameworkCore.Proxies: Vers√£o 6.0.0 - Habilita proxies de carregamento pregui√ßoso para o Entity Framework Core.
+- Microsoft.EntityFrameworkCore.Sqlite: Vers√£o 6.0.26 - Provedor de banco de dados SQLite para o Entity Framework Core.
+- Microsoft.EntityFrameworkCore.SqlServer: Vers√£o 6.0.26 - Provedor de banco de dados SQL Server para o Entity Framework Core.
+- Microsoft.EntityFrameworkCore.Tools: Vers√£o 6.0.26 - Ferramentas adicionais para o Entity Framework Core.
+- Microsoft.VisualStudio.Web.CodeGeneration.Design: Vers√£o 6.0.16 - Suporte em tempo de design para gera√ß√£o de c√≥digo ASP.NET Core.
+- Pomelo.EntityFrameworkCore.MySql: Vers√£o 6.0.2 - Provedor de banco de dados MySQL para o Entity Framework Core.
+- Swashbuckle.AspNetCore: Vers√£o 6.5.0 - Biblioteca para gera√ß√£o autom√°tica de documenta√ß√£o OpenAPI para a API.
 
 ## Iniciando
-- Clone o repositÛrio.
+- Clone o reposit√≥rio.
 - Certifique-se de ter o SDK .NET 6.0 instalado.
-- Atualize as strings de conex„o do banco de dados e as configuraÁıes do projeto, se necess·rio.
-- Compile e execute a aplicaÁ„o.
+- Atualize as strings (`Uid` e `Pwd`) de conex√£o do banco de dados (`appsettings.json`) e as configura√ß√µes do projeto, se necess√°rio.
+    - N√£o √© necess√°rio criar o banco de dados manualmente no Workbench, ele cria ao executar a API.
